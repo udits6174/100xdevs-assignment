@@ -8,7 +8,7 @@ router.post('/signup', async (req, res) => {
     // Implement admin signup logic
     const name = req.body.username;
     const pw = req.body.password;
-    //Check if exists already
+    
     const admin = await Admin.create({
         username: name,
         password: pw
