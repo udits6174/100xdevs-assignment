@@ -24,13 +24,12 @@ app.get("/errorCount", function (req, res) {
 });
 
 app.use((err, req, res, next) => {
-  if (!err) {
-    next();
-  } else {
+  if (err) {
     errorCount++;
-    res.status(404).send();
+    console.log(err);
+    res.status(408).send();
   }
 });
 
-// app.listen(3000);
+app.listen(3000);
 module.exports = app;
